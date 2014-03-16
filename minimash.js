@@ -34,8 +34,15 @@ $('.typeahead').typeahead(null, {
 	source: engine.ttAdapter(),
 });
 
+document.getElementById("submit").addEventListener("click",function(){
+var option = $('#option').val();
+var input = $('#input');
+window.alert("hello");
+},false);
+
 // lastfm.artist.getInfo({artist: 'Dave Koz'}, {success: function(data){
-// 		console.log(data.artist.bio.content);
-//     }, error: function(code, message) {
+// /* Use Data */
+// 	console.log(data);
+//     }, error: function(code, message){
 //     /* Show error message. */
-// }});
+//  }});
