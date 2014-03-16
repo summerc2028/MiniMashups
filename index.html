@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Mini Mashup</title>
+<head>
+	<title>Mini Mashup</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
 
-		<script type="text/javascript" src="lastfm.api.md5.js"></script>
-		<script type="text/javascript" src="lastfm.api.js"></script>
-		<script type="text/javascript" src="lastfm.api.cache.js"></script>
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css" />
 
-		<script type="text/javascript" src="minimash.js"></script>
-	</head>
-	<body>
-		<div>
-			<h1>Mini Mashup<h1>
+	<script type="text/javascript" src="lastfm.api.md5.js"></script>
+	<script type="text/javascript" src="lastfm.api.js"></script>
+	<script type="text/javascript" src="lastfm.api.cache.js"></script>
+
+	<script type="text/javascript" src="minimash.js"></script>
+</head>
+<body>
+	<div>
+		<h1>Mini Mashup<h1>
 			<div>
-				<form action="submit">
-					<ul>
-						<li>
-							<select id="option">
-								<option value="song">Song</option>
-								<option value="artist">Artist</option>
-								<option value="track">Track</option>
-							</select>
-						</li>
-						<li>
-							<input id="input" type="text">
-						</li>
-						<li>
-							<button id="submit" type="button">Submit</button>
-						</li>
-					</ul>
+				<form action="submit" class="well">
+					<label>Search for</label>
+					<select id="option">
+						<option value="song">Song</option>
+						<option value="artist">Artist</option>
+						<option value="track">Track</option>
+					</select>
+
+					<input id="input" type="text" class="span3" />
+
+					<button id="submit" type="button" class = "btn btn-primary">Submit</button>
+
 				</form>
 			</div>
 		</div>
+		<script src="js/bootstrap.min.js"></script>
 	</body>
-</html>
+	</html>
