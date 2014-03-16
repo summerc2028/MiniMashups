@@ -19,18 +19,18 @@
 <body>
 	<div>
 		<h1>Mini Mashup<h1>
-			<div>
-				<form action="submit" class="well">
-					<label>Search for</label>
+			<div class = "container">
+				<form action="submit" class="navbar-form navbar-left" role="search">
+					<h4><label>Search for</label>
 					<select id="option">
 						<option value="song">Song</option>
 						<option value="artist">Artist</option>
 						<option value="track">Track</option>
 					</select>
+					</h4>
+					<input id="input" type="text" class="form-control" placeholder="Song/Track/Artist name" />
 
-					<input id="input" type="text" class="span3" />
-
-					<button id="submit" type="button" class = "btn btn-primary">Submit</button>
+					<button id="submit" type="submit" class = "btn btn-primary">Submit</button>
 
 				</form>
 			</div>
