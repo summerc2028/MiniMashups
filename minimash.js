@@ -66,9 +66,11 @@ $(document).ready(function() {
 			{
 				success: function(data) {
 					/* Use data */
-					console.log(data.events.event[0].venue.location['geo:point']);
-					coords = data.events.event[0].venue.location['geo:point'];
-					initMap();
+					console.log(data.events.event[0].venue);
+					var locData = data.events.event[0].venue;
+					var heading = data.events.event[0].venue.name;
+					var content = data.events.event[0].venue.location;
+					initMap(locData);
 				},
 				error: function(code, message) {
 					/* Show error message. */
@@ -81,7 +83,12 @@ $(document).ready(function() {
 
 /* Google Maps API */
 
-function initMap() {
+function initMap(locData) {
+
+	var coords = locData.location['geo:point'];
+	var heading = locData.name;
+	var content = locData.location.street;
+	var cityCountryZip = locData.location.city + ', ' + locData.location.country + ' ' + locData.location.postalcode;
 
 	var location = new google.maps.LatLng(coords['geo:lat'], coords['geo:long']);
   	var mapOptions = {
@@ -98,26 +105,10 @@ function initMap() {
   		title:"Next Event"
   	});
 
-  	var contentString = '<div id="content">'+
-      '<div id="siteNotice">'+
-      '</div>'+
-      '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-      '<div id="bodyContent">'+
-      '<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-      'sandstone rock formation in the southern part of the '+
-      'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-      'south west of the nearest large town, Alice Springs; 450&#160;km '+
-      '(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-      'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-      'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-      'Aboriginal people of the area. It has many springs, waterholes, '+
-      'rock caves and ancient paintings. Uluru is listed as a World '+
-      'Heritage Site.</p>'+
-      '<p>Attribution: Uluru, <a href="http://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-      'http://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-      '(last visited June 22, 2009).</p>'+
-      '</div>'+
-      '</div>';
+  	var contentString = '<div id="content"><h1 id="firstHeading" class="firstHeading">'
+  		+ heading + '</h1><div id="bodyContent">'
+  		+ '<p>' + content + 		'</p>' +
+  		+ '<p>' + cityCountryZip + 	'</p>' + '</div></div>';
 
   var infowindow = new google.maps.InfoWindow({
       content: contentString
