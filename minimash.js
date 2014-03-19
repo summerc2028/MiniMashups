@@ -6,8 +6,8 @@ var lastfm = new LastFM({
 	cache: cache
 });
 
-var engine = new Bloodhound({
-	name: 'artists',
+var artistEngine = new Bloodhound({
+	name: 'artist',
 	remote: {
 		url: 'http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=%QUERY&api_key=fbd77c792fee9294d1706b5a65d1cb78&format=json',
 		filter: function(data) {
@@ -25,13 +25,16 @@ var engine = new Bloodhound({
 	queryTokenizer: Bloodhound.tokenizers.whitespace
 });
 
-engine.initialize();
-
+artistEngine.initialize();
 
 $(document).ready(function() {
 	
-	$('.typeahead').typeahead(null, {
-		source: engine.ttAdapter(),
+	$('.typeahead').typeahead({
+		highlight: true
+	},
+ 	{
+ 		name: 'artists',
+		source: artistEngine.ttAdapter()
 	});
 
 
