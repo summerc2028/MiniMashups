@@ -67,6 +67,8 @@ $(document).ready(function() {
 				success: function(data) {
 					/* Use data */
 					console.log(data.events.event[0].venue.location['geo:point']);
+					coords = data.events.event[0].venue.location['geo:point'];
+					initMap();
 				},
 				error: function(code, message) {
 					/* Show error message. */
@@ -78,10 +80,10 @@ $(document).ready(function() {
 });
 
 /* Google Maps API */
-google.maps.event.addDomListener(window, 'load', initialize);
-function initialize() {
 
-	var location = new google.maps.LatLng(-34.397, 150.644);
+function initMap() {
+
+	var location = new google.maps.LatLng(coords['geo:lat'], coords['geo:long']);
   	var mapOptions = {
     	zoom: 8,
     	center: location
