@@ -44,16 +44,32 @@ $(document).ready(function() {
 	/* Submission */
 	$('#submit').click(function() {
 		var artistName = $('#input').val();
+		console.log(artistName);
 
-		/* Load some artist info. */
+		/* Load artist info. */
 		lastfm.artist.getInfo(
 			{artist: artistName},
 			{
 				success: function(data) {
   					/* Use data. */
+  					console.log(data);
 				},
 				error: function(code, message) {
   					/* Show error message. */
+				}
+			}
+		);
+
+		/* Load artist events */
+		lastfm.artist.getEvents(
+			{artist: artistName},
+			{
+				success: function(data) {
+					/* Use data */
+					console.log(data.events.event[0].venue.location['geo:point']);
+				},
+				error: function(code, message) {
+					/* Show error message. */
 				}
 			}
 		);
@@ -69,6 +85,5 @@ function initialize() {
     	center: new google.maps.LatLng(-34.397, 150.644)
   	};
 
-  	var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-	}
+  	var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+}
