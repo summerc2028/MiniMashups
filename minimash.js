@@ -85,11 +85,17 @@ $(document).ready(function() {
 
 function initMap(locData) {
 
+	/* Location coordinates */
 	var coords = locData.location['geo:point'];
+
+	/* Location metadata */
 	var heading = locData.name;
 	var content = locData.location.street;
-	var cityCountryZip = locData.location.city + ', ' + locData.location.country + ' ' + locData.location.postalcode;
+	var cityCountryZip = locData.location.city + ', ' + locData.location.country + "\t" + locData.location.postalcode;
+	var phone = 'Phone: ' + locData.phonenumber;
+	var website = 'URL: <a href="' + locData.url + '">' + locData.url + '</a>';
 
+	/* Draw map */
 	var location = new google.maps.LatLng(coords['geo:lat'], coords['geo:long']);
   	var mapOptions = {
     	zoom: 8,
@@ -99,22 +105,22 @@ function initMap(locData) {
   	var map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
 
+  	/* Place marker */
   	var marker = new google.maps.Marker({
   		position: location,
   		map: map,
   		title:"Next Event"
   	});
 
+  	/* Set popup content */
   	var contentString = '<div id="content"><h1 id="firstHeading" class="firstHeading">'
-  		+ heading + '</h1><div id="bodyContent">'
-  		+ '<p>' + content + 		'</p>' +
-  		+ '<p>' + cityCountryZip + 	'</p>' + '</div></div>';
+  		+ heading + '</h1><div id="bodyContent"><p>' + content + '</p><p>' + cityCountryZip + '</p><p>' + phone + '</p><p>' + website + '</p></div></div>';
 
-  var infowindow = new google.maps.InfoWindow({
-      content: contentString
-  });
+  	var infowindow = new google.maps.InfoWindow({
+     	content: contentString
+  	});
 
-  google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
-  });
+  	google.maps.event.addListener(marker, 'click', function() {
+    	infowindow.open(map,marker);
+  	});
 }
