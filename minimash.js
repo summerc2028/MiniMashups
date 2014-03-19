@@ -32,14 +32,14 @@ $(document).ready(function() {
 	
 	/* Typeahead search box */
 	$('.typeahead').typeahead(
-		{
-			highlight: true
-		},
- 		{
- 			name: 'artists',
-			source: artistEngine.ttAdapter()
-		}
-	);
+	{
+		highlight: true
+	},
+	{
+		name: 'artists',
+		source: artistEngine.ttAdapter()
+	}
+);
 
 	/* Submission */
 	$('#submit').click(function() {
@@ -51,26 +51,32 @@ $(document).ready(function() {
 			{artist: artistName},
 			{
 				success: function(data) {
-  					/* Use data. */
-  					console.log(data);
-				},
-				error: function(code, message) {
-  					/* Show error message. */
-				}
-			}
-		);
-
-		/* Load artist events */
-		lastfm.artist.getEvents(
-			{artist: artistName},
-			{
-				success: function(data) {
-					/* Use data */
-					console.log(data.events.event[0].venue);
-					var locData = data.events.event[0].venue;
-					var heading = data.events.event[0].venue.name;
-					var content = data.events.event[0].venue.location;
-					initMap(locData);
+					/* Use data. */
+					console.log(data);
+					var onTour = data.artist.ontour;
+					$('#map-canvas').remove();
+					$('#info-container').append('<div id="map-canvas"></div>');
+					if (onTour == 1) {
+						/* Load artist events */
+						lastfm.artist.getEvents(
+							{artist: artistName},
+							{
+								success: function(data) {
+									/* Display map */
+									console.log(data.events.event[0].venue);
+									var locData = data.events.event[0].venue;
+									var heading = data.events.event[0].venue.name;
+									var content = data.events.event[0].venue.location;
+									initMap(locData);
+								},
+								error: function(code, message) {
+									/* Show error message. */
+								}
+							}
+						);
+					} else {
+						/* Handle event that there are no tour dates */
+					}
 				},
 				error: function(code, message) {
 					/* Show error message. */
@@ -78,7 +84,6 @@ $(document).ready(function() {
 			}
 		);
 	});
-
 });
 
 /* Google Maps API */
@@ -97,30 +102,30 @@ function initMap(locData) {
 
 	/* Draw map */
 	var location = new google.maps.LatLng(coords['geo:lat'], coords['geo:long']);
-  	var mapOptions = {
-    	zoom: 8,
-    	center: location
-  	};
+	var mapOptions = {
+		zoom: 8,
+		center: location
+	};
 
-  	var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
+	var map = new google.maps.Map(document.getElementById('map-canvas'),
+		mapOptions);
 
-  	/* Place marker */
-  	var marker = new google.maps.Marker({
-  		position: location,
-  		map: map,
-  		title:"Next Event"
-  	});
+	/* Place marker */
+	var marker = new google.maps.Marker({
+		position: location,
+		map: map,
+		title:"Next Event"
+	});
 
-  	/* Set popup content */
-  	var contentString = '<div id="content"><h1 id="firstHeading" class="firstHeading">'
-  		+ heading + '</h1><div id="bodyContent"><p>' + content + '</p><p>' + cityCountryZip + '</p><p>' + phone + '</p><p>' + website + '</p></div></div>';
+	/* Set popup content */
+	var contentString = '<div id="content"><h1 id="firstHeading" class="firstHeading">'
+	+ heading + '</h1><div id="bodyContent"><p>' + content + '</p><p>' + cityCountryZip + '</p><p>' + phone + '</p><p>' + website + '</p></div></div>';
 
-  	var infowindow = new google.maps.InfoWindow({
-     	content: contentString
-  	});
+	var infowindow = new google.maps.InfoWindow({
+		content: contentString
+	});
 
-  	google.maps.event.addListener(marker, 'click', function() {
-    	infowindow.open(map,marker);
-  	});
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.open(map,marker);
+	});
 }
