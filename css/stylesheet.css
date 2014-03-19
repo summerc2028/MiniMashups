@@ -111,9 +111,15 @@ p {
     text-align: right;
 }
 
+/* Overall layout */
+#bio-container, #info-container {
+    float: left;
+}
+
+
+
 /*Map Style*/
 #map-canvas{
-    margin: auto;
     width: 500px;
     height: 500px;
 }

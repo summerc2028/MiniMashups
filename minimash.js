@@ -71,15 +71,20 @@ $(document).ready(function() {
 								},
 								error: function(code, message) {
 									/* Show error message. */
+									/* This should never execute */
 								}
 							}
 						);
 					} else {
 						/* Handle event that there are no tour dates */
+						$('#map-canvas').append('<img src="http://www1.pcmag.com/media/images/344452-twitter-fail-whale-for-sw.jpg?thumb=y">');
+						$('#map-canvas').append('<div class="alert alert-danger">No Tour Dates Currently Available</div>');
 					}
 				},
 				error: function(code, message) {
-					/* Show error message. */
+					/* Artist does not exist */
+					$('#map-canvas').append('<img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcReXMdEp1IseBTL0S-_x1_pMg22QQ1lxQ9jDoomYHhIDx_1AWIB">');
+					$('#map-canvas').append('<div class="alert alert-danger">The Artist Does Not Exist... You Fool!</div>');
 				}
 			}
 		);
@@ -121,9 +126,12 @@ function initMap(locData) {
 	var contentString = '<div id="content"><h1 id="firstHeading" class="firstHeading">'
 	+ heading + '</h1><div id="bodyContent"><p>' + content + '</p><p>' + cityCountryZip + '</p><p>' + phone + '</p><p>' + website + '</p></div></div>';
 
-	var infowindow = new google.maps.InfoWindow({
-		content: contentString
-	});
+	var infowindow = new google.maps.InfoWindow(
+		{
+			content: contentString,
+			maxWidth: 325
+		}
+	);
 
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.open(map,marker);
