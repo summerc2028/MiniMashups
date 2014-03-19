@@ -6,6 +6,7 @@ var lastfm = new LastFM({
 	cache: cache
 });
 
+/* Bloodhound suggestion engine */
 var artistEngine = new Bloodhound({
 	name: 'artist',
 	remote: {
@@ -29,23 +30,38 @@ artistEngine.initialize();
 
 $(document).ready(function() {
 	
-	$('.typeahead').typeahead({
-		highlight: true
-	},
- 	{
- 		name: 'artists',
-		source: artistEngine.ttAdapter()
-	});
+	/* Typeahead search box */
+	$('.typeahead').typeahead(
+		{
+			highlight: true
+		},
+ 		{
+ 			name: 'artists',
+			source: artistEngine.ttAdapter()
+		}
+	);
 
+	/* Submission */
+	$('#submit').click(function() {
+		var artistName = $('#input').val();
 
-	$('#submit').click(function(){
-		var option = $('#option').val();
-		var text = $('#input').val();
+		/* Load some artist info. */
+		lastfm.artist.getInfo(
+			{artist: artistName},
+			{
+				success: function(data) {
+  					/* Use data. */
+				},
+				error: function(code, message) {
+  					/* Show error message. */
+				}
+			}
+		);
 	});
 
 });
 
-/*Google Maps API */
+/* Google Maps API */
 google.maps.event.addDomListener(window, 'load', initialize);
 function initialize() {
   	var mapOptions = {
