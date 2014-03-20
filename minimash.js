@@ -13,7 +13,7 @@ var artistEngine = new Bloodhound({
 		url: 'http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=%QUERY&api_key=fbd77c792fee9294d1706b5a65d1cb78&format=json',
 		filter: function(data) {
 			return $.map(data.results.artistmatches.artist, function(artist) {
-				console.log(artist);
+				//console.log(artist);
 				return {
 					value: artist.name
 				};
@@ -44,7 +44,6 @@ $(document).ready(function() {
 	/* Submission */
 	$('#submit').click(function() {
 		var artistName = $('#input').val();
-		console.log(artistName);
 
 		/* Load artist info. */
 		lastfm.artist.getInfo(
@@ -52,10 +51,22 @@ $(document).ready(function() {
 			{
 				success: function(data) {
 					/* Use data. */
-					console.log(data);
+					//console.log(data);
 					var onTour = data.artist.ontour;
 					$('#map-canvas').remove();
+					$('#artist-name').remove();
+					$('#profile-pic').remove();
+					$('#extended-bio').remove();
 					$('#info-container').append('<div id="map-canvas"></div>');
+					$('#bio-container').append('<div id="artist-name"></div>');
+					$('#bio-container').append('<div id="profile-pic"></div>');
+					$('#bio-container').append('<div id="extended-bio"></div>');
+					/* Create Artist Bio */
+					var nameArtist = data.artist.name;
+					var photo = data.artist.image[3]['#text'];
+					console.log(photo);
+					var bio = data.artist.bio.summary;
+					loadBio(nameArtist,photo,bio);
 					if (onTour == 1) {
 						/* Load artist events */
 						lastfm.artist.getEvents(
@@ -63,7 +74,7 @@ $(document).ready(function() {
 							{
 								success: function(data) {
 									/* Display map */
-									console.log(data.events.event[0].venue);
+									//console.log(data);
 									var locData = data.events.event[0].venue;
 									var heading = data.events.event[0].venue.name;
 									var content = data.events.event[0].venue.location;
@@ -136,4 +147,14 @@ function initMap(locData) {
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.open(map,marker);
 	});
+}
+
+/* Artist Bio */
+
+function loadBio(nameArtist,photo,bio){
+	$('#artist-name').append('<h1>'+nameArtist+'</h1>');
+	$('#profile-pic').append('<img src="'+photo+'" alt="Profile Pic">');
+	$('#extended-bio').append('<p>'+bio+'</p>');
+	$('#extended-bio').append('<hr />');
+
 }
