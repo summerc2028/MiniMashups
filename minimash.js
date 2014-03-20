@@ -45,28 +45,30 @@ $(document).ready(function() {
 	$('#submit').click(function() {
 		var artistName = $('#input').val();
 
+		/* Remove data from previous query */
+		$('#map-canvas').remove();
+		$('#artist-name').remove();
+		$('#profile-pic').remove();
+		$('#extended-bio').remove();
+		$('#info-container').append('<div id="map-canvas"></div>');
+		$('#bio-container').append('<div id="artist-name"></div>');
+		$('#bio-container').append('<div id="profile-pic"></div>');
+		$('#bio-container').append('<div id="extended-bio"></div>');
+
 		/* Load artist info. */
 		lastfm.artist.getInfo(
 			{artist: artistName},
 			{
 				success: function(data) {
 					/* Use data. */
-					//console.log(data);
 					var onTour = data.artist.ontour;
-					$('#map-canvas').remove();
-					$('#artist-name').remove();
-					$('#profile-pic').remove();
-					$('#extended-bio').remove();
-					$('#info-container').append('<div id="map-canvas"></div>');
-					$('#bio-container').append('<div id="artist-name"></div>');
-					$('#bio-container').append('<div id="profile-pic"></div>');
-					$('#bio-container').append('<div id="extended-bio"></div>');
+
 					/* Create Artist Bio */
 					var nameArtist = data.artist.name;
 					var photo = data.artist.image[3]['#text'];
-					console.log(photo);
 					var bio = data.artist.bio.summary;
 					loadBio(nameArtist,photo,bio);
+
 					if (onTour == 1) {
 						/* Load artist events */
 						lastfm.artist.getEvents(
@@ -74,7 +76,6 @@ $(document).ready(function() {
 							{
 								success: function(data) {
 									/* Display map */
-									//console.log(data);
 									var locData = data.events.event[0].venue;
 									var heading = data.events.event[0].venue.name;
 									var content = data.events.event[0].venue.location;
@@ -171,5 +172,4 @@ function loadBio(nameArtist,photo,bio){
 	$('#profile-pic').append('<img src="'+photo+'" alt="Profile Pic"><br /><br />');
 	$('#extended-bio').append('<p id="artistBio">'+bio+'</p>');
 	$('#extended-bio').append('<hr />');
-
 }
