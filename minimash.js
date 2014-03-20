@@ -152,9 +152,9 @@ function initMap(locData) {
 /* Artist Bio */
 
 function loadBio(nameArtist,photo,bio){
-	$('#artist-name').append('<h1>'+nameArtist+'</h1>');
+	$('#artist-name').append('<h1 id="artistHead">'+nameArtist+'</h1>');
 	$('#profile-pic').append('<img src="'+photo+'" alt="Profile Pic">');
-	$('#extended-bio').append('<p>'+bio+'</p>');
+	$('#extended-bio').append('<p id="artistBio">'+bio+'</p>');
 	$('#extended-bio').append('<hr />');
 
 }
