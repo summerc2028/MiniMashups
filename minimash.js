@@ -44,23 +44,22 @@ $(document).ready(function() {
 	/* Submission */
 	$('#submit').click(function() {
 		var artistName = $('#input').val();
-
+		/* Remove old data replace with new */
+		$('#map-canvas').remove();
+		$('#artist-name').remove();
+		$('#profile-pic').remove();
+		$('#extended-bio').remove();
+		$('#info-container').append('<div id="map-canvas"></div>');
+		$('#bio-container').append('<div id="artist-name"></div>');
+		$('#bio-container').append('<div id="profile-pic"></div>');
+		$('#bio-container').append('<div id="extended-bio"></div>');
 		/* Load artist info. */
 		lastfm.artist.getInfo(
 			{artist: artistName},
 			{
 				success: function(data) {
 					/* Use data. */
-					//console.log(data);
 					var onTour = data.artist.ontour;
-					$('#map-canvas').remove();
-					$('#artist-name').remove();
-					$('#profile-pic').remove();
-					$('#extended-bio').remove();
-					$('#info-container').append('<div id="map-canvas"></div>');
-					$('#bio-container').append('<div id="artist-name"></div>');
-					$('#bio-container').append('<div id="profile-pic"></div>');
-					$('#bio-container').append('<div id="extended-bio"></div>');
 					/* Create Artist Bio */
 					var nameArtist = data.artist.name;
 					var photo = data.artist.image[3]['#text'];
