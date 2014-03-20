@@ -105,10 +105,11 @@ $(document).ready(function() {
 /* Google Maps API */
 
 function initMap(locData) {
-
+	var map;
+	var geocoder;
+	var marker;
 	/* Location coordinates */
 	var coords = locData.location['geo:point'];
-
 	/* Location metadata */
 	var heading = locData.name;
 	var content = locData.location.street;
@@ -122,16 +123,30 @@ function initMap(locData) {
 		zoom: 8,
 		center: location
 	};
-
-	var map = new google.maps.Map(document.getElementById('map-canvas'),
+	 map = new google.maps.Map(document.getElementById('map-canvas'),
 		mapOptions);
-
 	/* Place marker */
-	var marker = new google.maps.Marker({
+	marker = new google.maps.Marker({
 		position: location,
 		map: map,
 		title:"Next Event"
 	});
+
+	/*If the last.fm database does not return lat/long (happens alot), 
+		find location based on text lookup (place,city,country,zip) if avaliable*/
+	if(coords['geo:lat']=="" || coords['geo:long']=="") {
+		geocoder = new google.maps.Geocoder();
+  		var address = heading+" "+cityCountryZip;
+  		console.log(address);
+  		geocoder.geocode( { 'address': address}, function(results, status) {
+    	if (status == google.maps.GeocoderStatus.OK) {
+      		map.setCenter(results[0].geometry.location);
+          	marker.setPosition(results[0].geometry.location);
+    	} else {
+      		alert('Geocode was not successful for the following reason: ' + status);
+    	}
+  	});
+  	}
 
 	/* Set popup content */
 	var contentString = '<div id="content"><h1 id="firstHeading" class="firstHeading">'
@@ -147,10 +162,10 @@ function initMap(locData) {
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.open(map,marker);
 	});
+
 }
 
 /* Artist Bio */
-
 function loadBio(nameArtist,photo,bio){
 	$('#artist-name').append('<h1 id="artistHead">'+nameArtist+'</h1>');
 	$('#profile-pic').append('<img src="'+photo+'" alt="Profile Pic">');
