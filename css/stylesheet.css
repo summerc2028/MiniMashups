@@ -6,19 +6,75 @@ html {
     overflow-y: scroll;
 }
 .container {
-    margin: 0 auto;
+    text-align: left;
     max-width: 750px;
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
 }
+
+.btn{
+    font-family:"Prociono";
+    color: #102D36;
+
+    border: 2px solid #999999;
+    border-radius: 8px 8px 8px 8px;
+    font-size: 24px;
+    height: 32px;
+    line-height: 19px;
+    margin-top: 8px;
+
+    background: -moz-linear-gradient(
+        top,
+        #F2C64E 0%,
+        #588fad);
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#F2C64E),
+        to(#588fad)
+        );
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid #003366;
+    -moz-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px 0px 1px rgba(255,255,255,1);
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px 0px 1px rgba(255,255,255,1);
+    box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px 0px 1px rgba(255,255,255,1);
+    text-shadow:
+        0px -1px 0px rgba(000,000,000,0.7),
+        0px 1px 0px rgba(255,255,255,0.3);
+}
+.btn:hover{
+    background: #F2C64E;
+    color:black;
+}
+
 .tt-dropdown-menu, .gist {
     text-align: left;
 }
-html {
-    color: #333333;
-    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    line-height: 1.2;
+
+body {
+    font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+    color: #F2C64E;
+    background-color: #102D36;
+    text-align: left;
+    margin-left: 50px;
+    margin-right: 100px;
+
 }
+h1{
+text-shadow: 0 0 7px #8F9CA1;
+}
+
+.navbar-form{
+margin-left: 0px;
+}
+
 .title, .example-name {
     font-family: Prociono;
 }
@@ -63,6 +119,7 @@ p {
     color: #999999;
 }
 .tt-dropdown-menu {
+    color: black;
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 8px 8px 8px 8px;
@@ -114,6 +171,7 @@ p {
 /* Overall layout */
 #bio-container, #info-container {
     float: left;
+    color:#CF8300;
 }
 
 
