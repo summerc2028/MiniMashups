@@ -20,14 +20,15 @@
 <body>
 	<div>
 		<h1>Mini Mashup</h1>
-			<div class="container">
-				<form action="submit" class="navbar-form navbar-left" role="search">
-					<h4><label>Search for</label></h4>
-					<input id="input" type="text" class="form-control typeahead" placeholder="Artist Name"/>
-					<button id="submit" type="button" class = "btn btn-primary">Submit</button>
-				</form>
-			</div>
+		<div class="container">
+			<form action="submit" class="navbar-form navbar-left" role="search">
+				<h4><label>Search for</label></h4>
+				<input id="input" type="text" class="form-control typeahead" placeholder="Artist Name"/>
+				<button id="submit" type="button" class = "btn btn-primary">Submit</button>
+			</form>
 		</div>
+	</div>
+	<div id="page-container">
 		<div id="bio-container">
 			<div id="artist-name"></div>
 			<div id="profile-pic"></div>
@@ -36,8 +37,8 @@
 		<div id="info-container">
 			<div id="map-canvas"></div>
 		</div>
-
-		<script src="js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="minimash.js"></script>
+	</div>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="minimash.js"></script>
 </body>
 </html>

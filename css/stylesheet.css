@@ -169,6 +169,11 @@ p {
 }
 
 /* Overall layout */
+#page-container {
+    width: 100%;
+    margin: auto;
+}
+
 #bio-container, #info-container {
     float: left;
     color:#CF8300;
@@ -181,6 +186,7 @@ p {
 #info-container {
     padding-top: 70px;
     padding-left: 30px;
+    width: 530px;
 }
 
 .error-img {
