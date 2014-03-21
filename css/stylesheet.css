@@ -80,6 +80,7 @@ p {
 .typeahead, .tt-query, .tt-hint {
     border: 2px solid #CCCCCC;
     border-radius: 4px 4px 4px 4px;
+    -moz-border-radius: 4px;
     font-size: 24px;
     height: 30px;
     line-height: 30px;
