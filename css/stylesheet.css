@@ -159,11 +159,7 @@ p {
 .example-twitter-oss .repo-description {
     font-size: 14px;
 }
-.example-sports .league-name {
-    border-bottom: 1px solid #CCCCCC;
-    margin: 0 20px 5px;
-    padding: 3px 0;
-}
+
 .example-arabic .tt-dropdown-menu {
     text-align: right;
 }
@@ -171,7 +167,8 @@ p {
 /* Overall layout */
 #page-container {
     width: 100%;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #bio-container, #info-container {
@@ -193,7 +190,6 @@ p {
     width: 100%;
     padding-bottom: 10px;
 }
-
 
 /*Map Style*/
 #map-canvas{
