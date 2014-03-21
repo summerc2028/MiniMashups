@@ -47,6 +47,7 @@ $(document).ready(function() {
 
 		/* Remove data from previous query */
 		$('#map-canvas').remove();
+		$('#map-header').remove();
 		$('#artist-name').remove();
 		$('#profile-pic').remove();
 		$('#extended-bio').remove();
@@ -79,6 +80,7 @@ $(document).ready(function() {
 									var locData = data.events.event[0].venue;
 									var heading = data.events.event[0].venue.name;
 									var content = data.events.event[0].venue.location;
+									$('#info-container').prepend('<p id="map-header">The next event for '+nameArtist+' is being held at '+heading+' in '+content.city+', '+content.country+'.</p>');
 									initMap(locData);
 								},
 								error: function(code, message) {
