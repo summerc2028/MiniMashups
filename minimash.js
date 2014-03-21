@@ -97,7 +97,7 @@ $(document).ready(function() {
 				},
 				error: function(code, message) {
 					/* Artist does not exist */
-					$('#map-canvas').append('<div class="alert alert-danger">The Artist Does Not Exist... You Fool!</div>');
+					$('#map-canvas').append('<div class="alert alert-danger">The Artist Does Not Exist!</div>');
 				}
 			}
 		);
