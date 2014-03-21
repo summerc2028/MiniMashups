@@ -97,7 +97,6 @@ $(document).ready(function() {
 				},
 				error: function(code, message) {
 					/* Artist does not exist */
-					$('#map-canvas').append('<img class="error-img" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcReXMdEp1IseBTL0S-_x1_pMg22QQ1lxQ9jDoomYHhIDx_1AWIB">');
 					$('#map-canvas').append('<div class="alert alert-danger">The Artist Does Not Exist... You Fool!</div>');
 				}
 			}
