@@ -19,7 +19,7 @@
 </head>
 <body>
 
-	<div class="container">
+<!--<div class="container">
 		<h1>Mini Mashup</h1>
 		<form action="submit" class="navbar-form navbar-left" role="search">
 			<h4><label>Search for</label></h4>
@@ -38,6 +38,56 @@
 				<div id="map-canvas"></div>
 			</div>
 	</div>
+-->
+	    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">RockIT</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+            	<input id="input" type="text" class="form-control typeahead" placeholder="Artist Name"/>
+            </div>
+            <button id="submit" type="button" class = "btn btn-primary">Submit</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+      	<div id="bio-container">
+			<div id="artist-name"><h1>Do a quick search!</h1></div>
+			<div id="profile-pic"></div>
+			<div id="extended-bio"><p>To learn about your favorite artist and his/her most recent event, please do a search on the top of the page!</p></div>
+		</div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div id="info-container">
+        <div id="map-canvas"></div>
+      </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; RockIT 2014</p>
+      </footer>
+    </div> <!-- /container -->
+
+
 
 	<script src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="minimash.js"></script>
