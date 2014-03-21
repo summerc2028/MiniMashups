@@ -77,16 +77,7 @@ p {
     margin: 0 0 10px;
 }
 */
-.typeahead, .tt-query, .tt-hint {
-    border: 2px solid #CCCCCC;
-    border-radius: 4px 4px 4px 4px;
-    font-size: 24px;
-    height: 30px;
-    line-height: 30px;
-    outline: medium none;
-    padding: 8px 12px;
-    width: 396px;
-}
+
 .typeahead {
     background-color: #FFFFFF;
 }
