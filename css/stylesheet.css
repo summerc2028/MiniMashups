@@ -146,7 +146,7 @@ p {
 
 /*Map Style*/
 #map-canvas{
-    width: 500px;
+    width: 1000px;
     height: 500px;
     margin: auto;
 }
