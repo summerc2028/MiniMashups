@@ -10,84 +10,6 @@ html {
     border-radius: 4px 4px 4px 4px;
 }
 
-/*.btn{
-    font-family:"Prociono";
-    color: #102D36;
-
-    border: 2px solid #999999;
-    border-radius: 4px 4px 4px 4px;
-    font-size: 24px;
-    height: 32px;
-    line-height: 19px;
-    margin-top: 8px;
-
-    background: -moz-linear-gradient(
-        top,
-        #F2C64E 0%,
-        #588fad);
-    background: -webkit-gradient(
-        linear, left top, left bottom,
-        from(#F2C64E),
-        to(#588fad)
-        );
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border: 1px solid #003366;
-    -moz-box-shadow:
-        0px 1px 3px rgba(000,000,000,0.5),
-        inset 0px 0px 1px rgba(255,255,255,1);
-    -webkit-box-shadow:
-        0px 1px 3px rgba(000,000,000,0.5),
-        inset 0px 0px 1px rgba(255,255,255,1);
-    box-shadow:
-        0px 1px 3px rgba(000,000,000,0.5),
-        inset 0px 0px 1px rgba(255,255,255,1);
-    text-shadow:
-        0px -1px 0px rgba(000,000,000,0.7),
-        0px 1px 0px rgba(255,255,255,0.3);
-}
-.btn:hover{
-    background: #F2C64E;
-    color:black;
-}
-*/
-
-/*body {
-    font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
-    color: #F2C64E;
-    background-color: #102D36;
-    text-align: left;
-    margin-left: 50px;
-    margin-right: 100px;
-
-}
-
-h1{
-text-shadow: 0 0 7px #8F9CA1;
-}
-
-.navbar-form{
-    margin-left: 0px;
-}
-
-.title, .example-name {
-    font-family: Prociono;
-}
-p {
-    margin: 0 0 10px;
-}
-*/
-.typeahead, .tt-query, .tt-hint {
-    border: 2px solid #CCCCCC;
-    border-radius: 4px 4px 4px 4px;
-    -moz-border-radius: 4px;
-    font-size: 24px;
-    height: 30px;
-    line-height: 30px;
-    outline: medium none;
-    padding: 8px 12px;
-    width: 396px;
-}
 .typeahead {
     background-color: #FFFFFF;
 }
@@ -124,28 +46,21 @@ p {
     margin: 0;
 }
 
-/* Overall layout
-#bio-container, #info-container {
-    float: left;
-    color:#CF8300;
-}
-
-#bio-container {
-    width: 30%;
-}
-
-#info-container {
-    padding-top: 25px;
-    padding-left: 30px;
-    width: 530px;
-}
- */
 .error-img {
     width: 500px;
     display: block;
     margin: auto;
     padding-bottom: 10px;
 }
+
+
+.ini-img {
+    width: 850px;
+    display: block;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
 
 /* Map Style */
 #map-canvas{
