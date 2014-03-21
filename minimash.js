@@ -92,7 +92,7 @@ $(document).ready(function() {
 					} else {
 						/* Handle event that there are no tour dates */
 						$('#map-canvas').append('<img class="error-img" src="http://www1.pcmag.com/media/images/344452-twitter-fail-whale-for-sw.jpg?thumb=y">');
-						$('#map-canvas').append('<div class="alert alert-danger">No Tour Dates Currently Available</div>');
+						$('#map-canvas').append('<div class="alert alert-danger">No Tour Dates Currently Available! Please Try A Different Artist!</div>');
 					}
 				},
 				error: function(code, message) {

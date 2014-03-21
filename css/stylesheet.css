@@ -53,6 +53,15 @@ html {
     padding-bottom: 10px;
 }
 
+
+.ini-img {
+    width: 850px;
+    display: block;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+
 /* Map Style */
 #map-canvas{
     width: 100%;
