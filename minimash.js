@@ -152,8 +152,8 @@ function initMap(locData) {
   	}
 
 	/* Set popup content */
-	var contentString = '<div id="content"><h1 id="firstHeading" class="firstHeading">'
-	+ heading + '</h1><div id="bodyContent"><p>' + content + '</p><p>' + cityCountryZip + '</p><p>' + phone + '</p><p>' + website + '</p></div></div>';
+	var contentString = '<div class="popup"><h1>'
+	+ heading + '</h1><div class="popup"><p>' + content + '</p><p>' + cityCountryZip + '</p><p>' + phone + '</p><p>' + website + '</p></div></div>';
 
 	var infowindow = new google.maps.InfoWindow(
 		{
