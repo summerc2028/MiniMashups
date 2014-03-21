@@ -12,7 +12,7 @@ html {
 
 .btn{
     font-family:"Prociono";
-    color: #102D36;
+    color: #DCDDE0;
 
     border: 2px solid #999999;
     border-radius: 4px 4px 4px 4px;
@@ -23,12 +23,12 @@ html {
 
     background: -moz-linear-gradient(
         top,
-        #F2C64E 0%,
-        #588fad);
+        #DCDDE0 0%,
+        #333333);
     background: -webkit-gradient(
         linear, left top, left bottom,
-        from(#F2C64E),
-        to(#588fad)
+        from(#DCDDE0),
+        to(#333333)
         );
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -47,21 +47,21 @@ html {
         0px 1px 0px rgba(255,255,255,0.3);
 }
 .btn:hover{
-    background: #F2C64E;
+    background: #DCDDE0;
     color:black;
 }
 
 body {
     font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
-    color: #F2C64E;
-    background-color: #102D36;
+    color: #333333;
+    background-color: #DCDDE0;
     text-align: left;
     margin-left: 50px;
     margin-right: 100px;
 
 }
 h1{
-text-shadow: 0 0 7px #8F9CA1;
+text-shadow: 0 0 7px #333333;
 }
 
 .navbar-form{
@@ -124,7 +124,7 @@ p {
 /* Overall layout */
 #bio-container, #info-container {
     float: left;
-    color:#CF8300;
+    color:#333333;
 }
 
 #bio-container {
