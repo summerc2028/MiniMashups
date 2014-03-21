@@ -80,7 +80,7 @@ $(document).ready(function() {
 									var locData = data.events.event[0].venue;
 									var heading = data.events.event[0].venue.name;
 									var content = data.events.event[0].venue.location;
-									$('#info-container').prepend('<p id="map-header">The next event for '+nameArtist+' is being held at '+heading+' in '+content.city+', '+content.country+'.</p>');
+									$('#info-container').prepend('<div class="alert alert-info"><p id="map-header">The next event for '+nameArtist+' is being held at '+heading+' in '+content.city+', '+content.country+'.</p></div>');
 									initMap(locData);
 								},
 								error: function(code, message) {
