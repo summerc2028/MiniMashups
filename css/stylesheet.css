@@ -5,12 +5,7 @@
 html {
     overflow-y: scroll;
 }
-.container {
-    text-align: left;
-    max-width: 750px;
-    text-align: left;
-    margin-left: 20px;
-}
+
 
 .btn{
     font-family:"Prociono";
