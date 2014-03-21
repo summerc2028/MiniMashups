@@ -1,0 +1,55 @@
+Test Cases for MiniMashups:
+
+
+Test Case 1:
+After opening index.html
+Search: Guns N' Roses
+Results: 
+-Font readable.
+-Information displayed.
+-Map displays the location at:
+
+Esplanada do Mineirão
+Avenida Antônio Abrahão Caram, 1001 - Pampulha
+
+Belo Horizonte, Brazil	31275-000
+
+Phone: +55 31 3499-4300
+
+URL: http://www.last.fm/venue/10340343+Esplanada+do+Mineir%C3%A3o
+
+-Able to zoom in/out of map. 
+
+
+Test Case 2:
+After opening index.html
+Search: System F
+Results:
+-Font readable.
+-Information displayed.
+-Displays:
+No Tour Dates Currently Available! Please Try A Different Artist!
+
+and image.
+
+
+Test Case 3:
+After opening index.html
+Search: A Perfect Circle
+Results:
+-Font Readable.
+-Information displayed.
+-Event displays:
+The next event for A Perfect Circle is being held at Greek Theatre in Los Angeles, United States.
+-Map displays the location at:
+Greek Theatre
+2700 North Vermont
+
+Los Angeles, United States	90027
+
+Phone: 323-665-5857
+
+URL: http://www.last.fm/venue/8784142+Greek+Theatre
+
+
+
