@@ -6,13 +6,16 @@ html {
     overflow-y: scroll;
 }
 
+.alert {
+    border-radius: 4px 4px 4px 4px;
+}
 
 .btn{
     font-family:"Prociono";
     color: #102D36;
 
     border: 2px solid #999999;
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 4px 4px 4px 4px;
     font-size: 24px;
     height: 32px;
     line-height: 19px;
@@ -27,9 +30,8 @@ html {
         from(#F2C64E),
         to(#588fad)
         );
-    -moz-border-radius: 6px;
-    -webkit-border-radius: 6px;
-    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
     border: 1px solid #003366;
     -moz-box-shadow:
         0px 1px 3px rgba(000,000,000,0.5),
@@ -49,10 +51,6 @@ html {
     color:black;
 }
 
-.tt-dropdown-menu, .gist {
-    text-align: left;
-}
-
 body {
     font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
     color: #F2C64E;
@@ -67,7 +65,7 @@ text-shadow: 0 0 7px #8F9CA1;
 }
 
 .navbar-form{
-margin-left: 0px;
+    margin-left: 0px;
 }
 
 .title, .example-name {
@@ -76,24 +74,10 @@ margin-left: 0px;
 p {
     margin: 0 0 10px;
 }
-.title {
-    font-size: 64px;
-    margin: 20px 0 0;
-}
-.example {
-    padding: 30px 0;
-}
-.example-name {
-    font-size: 32px;
-    margin: 20px 0;
-}
-.demo {
-    margin: 50px 0;
-    position: relative;
-}
+
 .typeahead, .tt-query, .tt-hint {
     border: 2px solid #CCCCCC;
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 4px 4px 4px 4px;
     font-size: 24px;
     height: 30px;
     line-height: 30px;
@@ -117,11 +101,12 @@ p {
     color: black;
     background-color: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 8px 8px 8px 8px;
+    border-radius: 4px 4px 4px 4px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     margin-top: 12px;
     padding: 8px 0;
     width: 422px;
+    text-align: left;
 }
 .tt-suggestion {
     font-size: 18px;
@@ -135,37 +120,8 @@ p {
 .tt-suggestion p {
     margin: 0;
 }
-.gist {
-    font-size: 14px;
-}
-.example-twitter-oss .tt-suggestion {
-    padding: 8px 20px;
-}
-.example-twitter-oss .tt-suggestion + .tt-suggestion {
-    border-top: 1px solid #CCCCCC;
-}
-.example-twitter-oss .repo-language {
-    float: right;
-    font-style: italic;
-}
-.example-twitter-oss .repo-name {
-    font-weight: bold;
-}
-.example-twitter-oss .repo-description {
-    font-size: 14px;
-}
-
-.example-arabic .tt-dropdown-menu {
-    text-align: right;
-}
 
 /* Overall layout */
-#page-container {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 #bio-container, #info-container {
     float: left;
     color:#CF8300;
