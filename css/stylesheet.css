@@ -132,7 +132,7 @@ p {
 }
 
 #info-container {
-    padding-top: 70px;
+    padding-top: 25px;
     padding-left: 30px;
     width: 530px;
 }
@@ -142,7 +142,7 @@ p {
     padding-bottom: 10px;
 }
 
-/*Map Style*/
+/* Map Style */
 #map-canvas{
     width: 500px;
     height: 500px;
